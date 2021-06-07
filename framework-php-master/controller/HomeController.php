@@ -31,6 +31,9 @@ function horseAdded(){
 		if (empty($p)) {
 			$error[$key]='deze waarde is verplicht';
 		}
+		elseif (is_numeric($p) && $key != 'height' && $key != 'age') {
+			$error[$key]='Je moet hier geen nummer invullen';
+		}
 	}
 	if (is_array($error)) {
 		render('home/addHorse', [$_POST, $error]);
@@ -51,6 +54,9 @@ function horseEdited(){
 	foreach ($_POST as $key => $p) {
 		if (empty($p)) {
 			$error[$key]='deze waarde is verplicht';
+		}
+		elseif (is_numeric($p) && $key != 'height' && $key != 'age' && $key != 'id') {
+			$error[$key]='Je moet hier geen nummer invullen';
 		}
 	}
 	if (is_array($error)) {
@@ -81,6 +87,12 @@ function riderAdded(){
 		if (empty($p)) {
 			$error[$key]='deze waarde is verplicht';
 		}
+		elseif (is_numeric($p) && $key != 'age' && $key != 'telephone') {
+			$error[$key]='Je moet hier geen nummer invullen';
+		}
+		elseif (!is_numeric($p) && $key == 'telephone') {
+			$error[$key]='Je moet hier een nummer invullen';
+		}
 	}
 	if (is_array($error)) {
 		render('home/addRider', [$_POST, $error]);
@@ -98,6 +110,12 @@ function riderEdited(){
 	foreach ($_POST as $key => $p) {
 		if (empty($p)) {
 			$error[$key]='deze waarde is verplicht';
+		}
+		elseif (is_numeric($p) && $key != 'age' && $key != 'telephone' && $key != 'id') {
+			$error[$key]='Je moet hier geen nummer invullen';
+		}
+		elseif (!is_numeric($p) && $key == 'telephone') {
+			$error[$key]='Je moet hier een nummer invullen';
 		}
 	}
 	if (is_array($error)) {

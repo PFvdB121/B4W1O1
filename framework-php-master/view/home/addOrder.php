@@ -7,12 +7,12 @@
 	<input type="hidden" name="horse" value="<?=$data[0]['horse']?>">
 	<div class="row">
 		<label for="day" class="col-3">Welke dag?</label>
-		<input type="date" name="day" id="day" placeholder="Dag" value="<?=$data[0]['day']?>">
+		<input type="date" name="day" id="day" value="<?=$data[0]['day']?>">
 		<span class="text-danger"><?=$data[1]['day'];?></span>
 	</div>
 	<div class="row">
 		<label for="clock" class="col-3">Wanneer?</label>
-		<input type="time" name="clock" id="clock" placeholder="Tijd" value="<?=$data[0]['clock']?>">
+		<input type="time" name="clock" id="clock" value="<?=$data[0]['clock']?>">
 		<span class="text-danger"><?=$data[1]['clock'];?></span>
 	</div>
 	<div class="row">
@@ -23,7 +23,7 @@
 	<div class="row">
 		<label for="rider" class="col-3">Ruiter</label>
 		<select name="rider" id="rider">
-			<option>--Selecteer een optie hier--</option>
+			<option value="">--Selecteer een optie hier--</option>
 			<?php
 				foreach ($riders as $r) {
 			?>

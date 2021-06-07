@@ -14,7 +14,7 @@
 	<div>
 		<label for="gender" class="col-3">Geslacht</label>
 		<select name="gender" id="gender">
-			<option>--selecteer een optie hier--</option>
+			<option value="">--selecteer een optie hier--</option>
 			<option value="Man"
 			<?php
 				if ($data[0]['gender']=='Man') {

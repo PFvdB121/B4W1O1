@@ -1,6 +1,6 @@
 <h1><?=$name?> aanpassen</h1>
 <form action="<?=URL?>home/horseEdited" method="post">
-	<input type="hidden" name="id" value="<?=$id?>">
+	<input type="hidden" name="id" value="<?=$data[0]['id']?>">
 	<div class="row">
 		<label for="name" class="col-3">Naam</label>
 		<input type="text" name="name" id="name" value="<?=$data[0]['name']?>">
@@ -18,13 +18,13 @@
 	</div>
 	<div class="row">
 		<label for="height" class="col-3">Hoogte in centimeter</label>
-		<input type="number" name="height" id="height" value="<?=$data[0]['height']?>">
+		<input type="number" name="height" id="height" min="100" value="<?=$data[0]['height']?>">
 		<span class="text-danger"><?=$data[1]['height'];?></span>
 	</div>
 	<div class="row">
 		<label for="available" class="col-3">Bruikbaar voor springsport?</label>
 		<select name="available" id="available">
-			<option>--Selecteer een optie--</option>
+			<option value="">--Selecteer een optie--</option>
 			<option value="Wel"
 			<?php
 			if ($data[0]['available']=='Wel') {
