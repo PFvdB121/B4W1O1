@@ -87,7 +87,7 @@ function riderAdded(){
 		if (empty($p)) {
 			$error[$key]='deze waarde is verplicht';
 		}
-		elseif (is_numeric($p) && $key != 'age' && $key != 'telephone') {
+		elseif (is_numeric($p) && $key != 'age' && $key != 'telephone' && $key != 'housenumber') {
 			$error[$key]='Je moet hier geen nummer invullen';
 		}
 		elseif (!is_numeric($p) && $key == 'telephone') {
@@ -111,7 +111,7 @@ function riderEdited(){
 		if (empty($p)) {
 			$error[$key]='deze waarde is verplicht';
 		}
-		elseif (is_numeric($p) && $key != 'age' && $key != 'telephone' && $key != 'id') {
+		elseif (is_numeric($p) && $key != 'age' && $key != 'telephone' && $key != 'housenumber' && $key != 'id') {
 			$error[$key]='Je moet hier geen nummer invullen';
 		}
 		elseif (!is_numeric($p) && $key == 'telephone') {
